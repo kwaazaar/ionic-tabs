@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { WebIntent } from '@ionic-native/web-intent';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,6 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    WebIntent,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
