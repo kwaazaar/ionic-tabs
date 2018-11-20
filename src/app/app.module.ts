@@ -13,13 +13,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { WebIntent } from '@ionic-native/web-intent';
 
+import { MenuService } from '../services/menu-service';
+import { MenuPage } from '../pages/menupage/menupage';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MenuPage,
   ],
   imports: [
     BrowserModule,
@@ -31,12 +35,14 @@ import { WebIntent } from '@ionic-native/web-intent';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MenuPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     WebIntent,
+    MenuService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

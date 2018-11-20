@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="{{currentMenu.icon}}"></ion-icon>&nbsp;&nbsp;{{currentMenu.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button full *ngFor="let item of currentMenu.items" (click)="InvokeMenuItem(item)">{{item.name}}</button>
+</ion-content>
