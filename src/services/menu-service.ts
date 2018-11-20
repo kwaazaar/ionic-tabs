@@ -20,8 +20,8 @@ export class MenuService {
         let menuitem = new MenuItem();
         menuitem.name = 'Afas Pocket App',
         menuitem.type = 'app';
-        menuitem.package = "nl.afas.pocket2.MainActivity";
-        menuitem.class = "nl.afas.pocket2";
+        menuitem.package = "nl.afas.pocket2";
+        menuitem.class = "nl.afas.pocket2.MainActivity";
         menu.items.push(menuitem);
 
         // * Hastus
