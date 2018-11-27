@@ -1,3 +1,4 @@
-<ion-tabs *ngIf="currentMenus" (ionChange)="tabChanged($event)">
-  <ion-tab *ngFor="let menu of currentMenus" [root]="tabs[menu.index]" [rootParams]="menu" tabTitle="{{menu.name}}" tabIcon="{{menu.icon}}"></ion-tab>
+<ion-tabs (ionChange)="tabChanged($event)">
+    <ion-tab [root]="accountTab" tabTitle="Account" tabIcon="home"></ion-tab>
+    <ion-tab *ngFor="let menu of currentMenus" [root]="tabs[menu.index]" [rootParams]="menu" tabTitle="{{menu.name}}" tabIcon="{{menu.icon}}"></ion-tab>
 </ion-tabs>

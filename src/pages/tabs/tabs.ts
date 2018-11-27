@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { AccountPage } from '../account/account';
 import { MenuService } from '../../services/menu-service';
 import { MenuPage } from '../menupage/menupage';
 import { Menu } from '../../services/menu';
-import { Type } from '@angular/compiler/src/core';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -33,5 +30,6 @@ export class TabsPage implements OnInit {
     console.log('tabChanged', $event);
   }
 
+  accountTab = AccountPage;
   tabs = [ MenuPage, MenuPage, MenuPage, MenuPage, MenuPage, MenuPage, MenuPage, MenuPage ];
 }
