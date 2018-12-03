@@ -10,13 +10,13 @@ import { MenuItem } from '../../services/menu-item';
 })
 export class MenuPage {
 
-  private currentMenu: Menu;
+  currentMenu: Menu;
 
   constructor(public navCtrl: NavController, navParams: NavParams, private webIntent: WebIntent) {
     this.currentMenu = navParams.data as Menu;
   }
 
-  private InvokeMenuItem(item: MenuItem): void {
+  InvokeMenuItem(item: MenuItem): void {
     if (item.type === 'app') {
       this.InvokeApp(item.package, item.class);
     } else if (item.type == 'link') {
@@ -27,11 +27,10 @@ export class MenuPage {
   }
 
   private InvokeApp(packageName: string, className: string): void {
-    console.log('InvokeIntent');
+    console.log(`InvokeApp: package: ${packageName}, class: ${className}`);
 
     const options = {
-      component:
-      {
+      component: {
         "package": packageName,
         "class": className
       },
@@ -49,11 +48,10 @@ export class MenuPage {
   }
 
   private InvokeLink(url: string): void {
-    console.log('InvokeLink:', url);
+    console.log(`InvokeLink: url: ${url}`);
     const options = {
       action: this.webIntent.ACTION_VIEW,
       url,
-      //type: 'application/vnd.android.package-archive'
     };
 
     this.webIntent.startActivity(options).then(() => {

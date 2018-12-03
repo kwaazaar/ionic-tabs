@@ -7,5 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button full *ngFor="let item of currentMenu.items" (click)="InvokeMenuItem(item)">{{item.name}}</button>
+  <button ion-button icon-start full *ngFor="let item of currentMenu.items" (click)="InvokeMenuItem(item)">
+    <ion-icon *ngIf="item.icon" name="{{item.icon}}"></ion-icon>
+    <img *ngIf="item.image" src="{{item.image}}" style="max-width: 24px; margin-right: 3px">
+    {{item.name}}
+  </button>
 </ion-content>
